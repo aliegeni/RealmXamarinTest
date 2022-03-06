@@ -34,7 +34,7 @@ namespace RealmTest
 
         async Task UpdateData()
         {
-            var artists = new Repository().GetData();
+            var artists = new Repository().RequestData();
             await Realm.GetInstance().WriteAsync(realm =>
             {
                 artists.ForEach(artist => realm.Add(artist, true));
